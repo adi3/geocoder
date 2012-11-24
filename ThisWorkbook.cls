@@ -22,8 +22,10 @@ Sub Workbook_Activate()
     'Called again as icon is changed by Excel each time a workbook activates
     ChangeApplicationIcon
     
+    'The progress bar animation shown upon clicking Generate Plot.
     Sheet1.Shapes("Rectangle 59").Visible = msoFalse
-
+    
+    Sheet1.ComboBox2.Value = "World Map"
     
     If Sheet1.TextBox1.Value <> "" Then
         Sheet1.TextBox1.Value = ""
@@ -123,4 +125,9 @@ Sub Workbook_Deactivate()
 
     On Error GoTo 0
 
+
+End Sub
+
+Private Sub Workbook_WindowResize(ByVal Wn As Window)
+    MsgBox "adi"
 End Sub
